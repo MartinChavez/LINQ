@@ -27,7 +27,7 @@ Basics
             */
             /*
             LINQ can be used when working with:
-            - Working with Lists
+            - Lists
             - Binding Data
             - Generating Summary Data
             - Working with Strings
