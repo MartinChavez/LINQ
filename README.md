@@ -1,5 +1,3 @@
-<a name="README">[<img src="https://camo.githubusercontent.com/eb464a60a4a47f8b600aa71bfbc6aff3fe5c5392/68747470733a2f2f7261772e6769746875622e636f6d2f766f6f646f6f74696b69676f642f6c6f676f2e6a732f6d61737465722f6a732e706e67" width="200px" height="200px" />](https://github.com/MartinChavez/Learn-Javascript)</a>
-
 LINQ : Test-Driven Learning
 ================
 
@@ -11,7 +9,7 @@ Topics
 
 Tools
 ====================
-<a name="README">[<img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0CAcQjRxqFQoTCN3C29P-g8gCFRA1iAods4wPIw&url=http%3A%2F%2Ftechcrunch.com%2F2015%2F03%2F31%2Fmicrosoft-simplifies-visual-studio-lineup-and-pricing-for-enterprise-users%2F&bvm=bv.103073922,d.cGU&psig=AFQjCNGyQKiokGAZKsK9lwQU3170RCKlUg&ust=1442782704898188" width="50px" height="50px" />](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx)</a>
+<a name="README">[<img src="http://www.codeproject.com/KB/cross-platform/860150/vs2015.png" width="50px" height="50px" />](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx)</a>
 
 Basics
 ====================
