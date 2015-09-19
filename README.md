@@ -48,6 +48,7 @@ Basics
             const bool answer = true;
             Assert.IsTrue(answer);
         }
+        
         [TestMethod]
         public void FindItemWithForeachIterator()
         {
