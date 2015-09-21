@@ -7,7 +7,11 @@ A project aimed to help the user master LINQ with a test-driven approach. Each u
 
 Topics
 ================
- - Basics
+ - Query Syntax
+ - Method Syntax
+ - Lambda expressions
+ - First() and FirstOrDefault()
+ - Where()
 
 Tools
 ====================
