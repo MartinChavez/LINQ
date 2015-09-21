@@ -64,27 +64,6 @@ Basics
         }
 
         [TestMethod]
-        public void Syntax()
-        {
-            /* LINQ Syntax
-            - There are two ways of writing LINQ Queries:
-            - Query Syntax 
-            - Method Syntax
-            */
-            /* Query syntax
-            - Declarative form to invoke the LINQ Operators
-            - Similar to a SQL statement
-            */
-            /* Method syntax
-            - Invokes the LINQ operators using methods
-            */
-
-            //Is the Query syntax semantically identical to the Method syntax?
-            const bool answer = true;
-            Assert.IsTrue(answer);
-        }
-
-        [TestMethod]
         public void FindItemWithLinqQuerySyntax()
         {
             var programmingLanguageRepository = new ProgrammingLanguageRepository();
