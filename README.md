@@ -1,4 +1,4 @@
-<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/LINQ.png" width="200px" height="200px"/>
+<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/LINQ.png" width="500px" height="200px"/>
 
 LINQ: Test-Driven Learning
 ================
