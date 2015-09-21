@@ -28,7 +28,20 @@ namespace Models
                     new ProgrammingLanguage()
                           {  Id = 4,
                             Name= "Python"
-                    } };
+                    },
+                     new ProgrammingLanguage()
+                          {  Id = 5,
+                            Name= "C"
+                    },
+                      new ProgrammingLanguage()
+                          {  Id = 6,
+                            Name= "Objective-C"
+                    },
+                        new ProgrammingLanguage()
+                          {  Id = 6,
+                            Name= "Ruby"
+                    }
+            };
             return programmingLanguages;
         }
     }
