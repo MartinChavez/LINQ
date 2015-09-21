@@ -44,33 +44,42 @@ Basics
             - LINQ to XML
             */
 
+            // LINQ Defines a set of general purpose standard query operators that allow:
+            /*
+            - Transversal
+            - Filter
+            - Projection
+            */
+            // Queries can be applied to any data source that is based on a Type that implements IEnumerable<T>
+
             //LINQ makes a query a first-class language construct in C# ?
             const bool answer = true;
             Assert.IsTrue(answer);
         }
-        
-        [TestMethod]
-        public void FindItemWithForeachIterator()
-        {
-            var programmingLanguageRepository = new ProgrammingLanguageRepository();
-            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
 
-            /* Normal Foreach iteration */
-            ProgrammingLanguage csharp = null;
-            /* Iterating over the loop and finding the programming language 'C#'*/
-            foreach (var programmingLanguage in programmingLanguages)
-            {
-                if (programmingLanguage.Name == "C#")
-                {
-                    csharp = programmingLanguage;
-                }
-            }
-            Assert.IsNotNull(csharp);
-            Assert.IsTrue(csharp.Name == "C#");
+        [TestMethod]
+        public void Syntax()
+        {
+            /* LINQ Syntax
+            - There are two ways of writing LINQ Queries:
+            - Query Syntax 
+            - Method Syntax
+            */
+            /* Query syntax
+            - Declarative form to invoke the LINQ Operators
+            - Similar to a SQL statement
+            */
+            /* Method syntax
+            - Invokes the LINQ operators using methods
+            */
+
+            //Is the Query syntax semantically identical to the Method syntax?
+            const bool answer = true;
+            Assert.IsTrue(answer);
         }
 
         [TestMethod]
-        public void FindItemWithLinqQueryExpressions()
+        public void FindItemWithLinqQuerySyntax()
         {
             var programmingLanguageRepository = new ProgrammingLanguageRepository();
             var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
@@ -99,6 +108,71 @@ Basics
             Assert.IsNotNull(csharp);
             Assert.IsTrue(csharp.Name == "C#");
         }
+
+        [TestMethod]
+        public void FindItemWithLinqMethodSyntax()
+        {
+            var programmingLanguageRepository = new ProgrammingLanguageRepository();
+            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+
+            /* LINQ extension methods */
+            // The extension methods extend any Type that implements the IEnumerable interface
+
+            /* The First() extension method:
+            - Returns the first element of the sequence
+            - The First() method will throw an exception if no match is found
+            */
+            /* The First() method has two overloads:
+            - The first overload method passes no parameters and returns the first element of a sequence
+            - The second overload allows defining the criteria, it returns the first element in a sequence that satisfies a specific condition
+                - First(Func<ProgrammingLanguage,bool> predicate) overload defines a delegate (reference to a function)
+            */
+
+            /* Lambda expression */
+            // It is an in-line(defined in the extension method parameter) anonymous function
+
+            // programmingLanguage: represents the parameter, in other words, represents each programming language as the sequence is iterated
+            // => : represents the Lambda operator, it separates the parameters from the expression itself
+            // programmingLanguage.Name == "C#": represents the body of the function
+            // when the condition is met, the Lamda fuction returns 'true' and 'First()' returns the object
+            var csharp = programmingLanguages.First(programmingLanguage => programmingLanguage.Name == "C#");
+
+            Assert.IsNotNull(csharp);
+            Assert.IsTrue(csharp.Name == "C#");
+        }
+
+        [TestMethod]
+        public void FailToFindItemWithLinqMethodSyntax()
+        {
+            var programmingLanguageRepository = new ProgrammingLanguageRepository();
+            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            /* FirstOrDefault */
+            // Finds the first entry on the list, but if no entry is found, it returns the default value of the list object, which in most reference Types is 'null'
+            var cplusplus = programmingLanguages.FirstOrDefault(programmingLanguage => programmingLanguage.Name == "C++");
+
+            Assert.IsNull(cplusplus);
+        }
+
+        [TestMethod]
+        public void FindSeveralItemsWithLinqMethodSyntax()
+        {
+            var programmingLanguageRepository = new ProgrammingLanguageRepository();
+            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            /* Where */
+            // Where is the extension method that is used to find multiple entries
+            // It also recieves a Lamda expression as a parameter
+            var foundLanguages =
+                programmingLanguages.Where(
+                    // It is a good practice to cache the query result by simply adding a ToList() or ToArray() after LINQ so that the query result is saved(cached)
+                    // Otherwise, you will enumerate the collection every time you execute a LINQ statement on 'programmingLanguages'
+                    programmingLanguage => programmingLanguage.Name == "C#" || programmingLanguage.Name == "Java").ToList();
+
+            Assert.AreEqual(foundLanguages.First().Name, "C#");
+            // Chaining: Extension methods can be chained together
+            // Skip() - allows to fluently(via chaining) skip one entry
+            Assert.AreEqual(foundLanguages.Skip(1).First().Name, "Java");
+        }
+    }
 ```
 Questions ?
 ====================
