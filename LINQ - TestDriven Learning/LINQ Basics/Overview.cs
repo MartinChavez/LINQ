@@ -39,7 +39,7 @@ namespace LINQ_Basics
             - Filter
             - Projection
             */
-            // Queries can be applied to any data source that is based on a Type that implements IEnumerable< T >
+            // Queries can be applied to any data source that is based on a Type that implements IEnumerable<T>
 
             //LINQ makes a query a first-class language construct in C# ?
             const bool answer = true;
