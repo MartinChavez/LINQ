@@ -65,5 +65,30 @@ namespace LINQ_Examples
             Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C#");
             Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Java");
         }
+
+        [TestMethod]
+        public void SortingWithNullValues()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages().ToList();
+            // Adding a new programming language with null values
+            programmingLanguages.Add(new ProgrammingLanguage()
+            {
+                Id = null,
+                Name = null,
+                Rating = 0
+            });
+
+            /* Sorting with Null Values */
+            // The 'null' values will always be sorted to the top of the list
+            var orderedByNullOnTop = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Name);
+
+            Assert.IsNull(orderedByNullOnTop.First().Name);
+
+            /* HasValue */
+            // It allows to control where the 'null' values are in the sort by verifying that the property has a value
+            var orderedByNullOnTheBottom = programmingLanguages.OrderByDescending(programmingLanguage => programmingLanguage.Id.HasValue);
+
+            Assert.IsNull(orderedByNullOnTheBottom.Last().Id);
+        }
     }
 }
