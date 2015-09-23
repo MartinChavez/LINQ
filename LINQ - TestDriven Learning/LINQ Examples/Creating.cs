@@ -8,21 +8,31 @@ namespace LINQ_Examples
     public class Creating
     {
         /* Creating */
-        // LINQ Provides a set of ordering operators that allow you to order a squence of objects by one or more criteria
-        // The execution of a query expression using these operators is defered until the code request an item from the resulting sequence
+        // It can be achieved by using the IEnumerable static class methods: Range and Repeat
+        // They are not extension methods and they are nor deferred
         [TestMethod]
-        public void OrderingByKeySelector()
+        public void CreatingUsingRange()
         {
-            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+            /* Range */
+            // Generates a sequence of integral numbers within a specified range
+            var integers = Enumerable.Range(0,10);//This statements will create a sequence of 10 elements 0..9
 
-            /* OrderBy */
-            // The parameter for OrderBy is a KeySelector, which is the filed to use as the key for the sorting
-            var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Name);
+            var currentNumber = 0;
+            foreach (var integer in integers)
+            {
+                Assert.AreEqual(integer, currentNumber);
+                currentNumber++;
+            }
 
-            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C");
-            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Ruby");
+            /* Select */
+            // Projects the result into any desired sequence
+            var integersPlusOne = Enumerable.Range(0, 10).Select(n => n * 2);
+            var currentNumberSelect = 0;
+            foreach (var integer in integersPlusOne)
+            {
+                Assert.AreEqual(integer, currentNumberSelect);
+                currentNumberSelect += 2;
+            }
         }
-
-     
     }
 }
