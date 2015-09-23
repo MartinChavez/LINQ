@@ -1,45 +1,46 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Models
 {
-    public class ProgrammingLanguageRepository
+    public static class ProgrammingLanguageRepository
     {
-        public ProgrammingLanguage Find(IEnumerable<ProgrammingLanguage> programmingLanguages, int programmingLanguageId)
+        public static IEnumerable<ProgrammingLanguage> GetProgrammingLanguages()
         {
-            return programmingLanguages.FirstOrDefault(programmingLanguage => programmingLanguage.Id == programmingLanguageId);
-        }
-
-        public List<ProgrammingLanguage> GetProgrammingLanguages()
-        {
-            List<ProgrammingLanguage> programmingLanguages = new List<ProgrammingLanguage>
+            var programmingLanguages = new List<ProgrammingLanguage>
                     {new ProgrammingLanguage()
                           { Id = 1,
-                            Name= "C#",
+                            Name = "C#",
+                            Rating = 10
                        },
                     new ProgrammingLanguage()
                           {  Id = 2,
-                            Name= "Javascript"
+                            Name= "Javascript",
+                              Rating = 7
                     },
                     new ProgrammingLanguage()
                           { Id = 3,
-                            Name= "Java"
+                            Name= "Java",
+                            Rating = 3
                     },
                     new ProgrammingLanguage()
                           {  Id = 4,
-                            Name= "Python"
+                             Name= "Python",
+                             Rating = 7
                     },
                      new ProgrammingLanguage()
                           {  Id = 5,
-                            Name= "C"
+                             Name= "C",
+                             Rating = 8
                     },
                       new ProgrammingLanguage()
                           {  Id = 6,
-                            Name= "Objective-C"
+                             Name= "Objective-C",
+                             Rating = 6
                     },
                         new ProgrammingLanguage()
                           {  Id = 6,
-                            Name= "Ruby"
+                             Name= "Ruby",
+                             Rating = 7
                     }
             };
             return programmingLanguages;

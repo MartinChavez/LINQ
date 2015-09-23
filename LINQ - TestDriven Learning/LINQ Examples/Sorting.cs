@@ -1,0 +1,69 @@
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Models;
+
+namespace LINQ_Examples
+{
+    [TestClass]
+    public class Sorting
+    {
+        /* Sorting */
+        // LINQ Provides a set of ordering operators that allow you to order a squence of objects by one or more criteria
+        // The execution of a query expression using these operators is defered until the code request an item from the resulting sequence
+        [TestMethod]
+        public void OrderingByKeySelector()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+
+            /* OrderBy */
+            // The parameter for OrderBy is a KeySelector, which is the filed to use as the key for the sorting
+            var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Name);
+
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Ruby");
+        }
+
+        [TestMethod]
+        public void OrderingUsingTwoConditions()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+            /* ThenBy */
+            // Allows a secondary sort apart from OrderBy
+            // The parameter for ThenBy is a KeySelector
+            var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Rating).ThenBy(programmingLanguage => programmingLanguage.Name);
+            // Note: It is possible to create several filters by using chaining, as long as the first method is OrderBy followed by the series of ThenBy
+
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "Java");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "C#");
+        }
+
+        [TestMethod]
+        public void SortingInReverseUsingOrderByDescending()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+
+            /* OrderByDescending */
+            // Allows to reverse a sequence of items by using a KeySelector
+            var orderedProgrammingLanguages = programmingLanguages.OrderByDescending(programmingLanguage => programmingLanguage.Rating);
+
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C#");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Java");
+
+            /* Reverse */
+            // Functionally identical to OrderByDescending but uses a different syntax
+        }
+
+        [TestMethod]
+        public void SortingInReverseUsingReverse()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+
+            /* Reverse */
+            // Functionally identical to OrderByDescending but uses a different syntax
+            var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Rating).Reverse().ToList();
+
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C#");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Java");
+        }
+    }
+}

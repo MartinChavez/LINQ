@@ -70,8 +70,7 @@ namespace LINQ_Basics
         [TestMethod]
         public void FindItemWithForeachIterator()
         {
-            var programmingLanguageRepository = new ProgrammingLanguageRepository();
-            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
 
             /* Normal Foreach iteration */
             ProgrammingLanguage csharp = null;
@@ -90,8 +89,7 @@ namespace LINQ_Basics
         [TestMethod]
         public void FindItemWithLinqQuerySyntax()
         {
-            var programmingLanguageRepository = new ProgrammingLanguageRepository();
-            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
 
             /* Query Expression */
             // A query expression operates on one or more data sources by applying one or more query operators
@@ -121,8 +119,7 @@ namespace LINQ_Basics
         [TestMethod]
         public void FindItemWithLinqMethodSyntax()
         {
-            var programmingLanguageRepository = new ProgrammingLanguageRepository();
-            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
 
             /* LINQ extension methods */
             // The extension methods extend any Type that implements the IEnumerable interface
@@ -153,8 +150,7 @@ namespace LINQ_Basics
         [TestMethod]
         public void FailToFindItemWithLinqMethodSyntax()
         {
-            var programmingLanguageRepository = new ProgrammingLanguageRepository();
-            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
             /* FirstOrDefault */
             // Finds the first entry on the list, but if no entry is found, it returns the default value of the list object, which in most reference Types is 'null'
             var cplusplus = programmingLanguages.FirstOrDefault(programmingLanguage => programmingLanguage.Name == "C++");
@@ -165,8 +161,7 @@ namespace LINQ_Basics
         [TestMethod]
         public void FindSeveralItemsWithLinqMethodSyntax()
         {
-            var programmingLanguageRepository = new ProgrammingLanguageRepository();
-            var programmingLanguages = programmingLanguageRepository.GetProgrammingLanguages();
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
             /* Where */
             // Where is the extension method that is used to find multiple entries
             // It also recieves a Lamda expression as a parameter
