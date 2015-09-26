@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Creating.cs" />
+    <Compile Include="Comparing.cs" />
     <Compile Include="Sorting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
