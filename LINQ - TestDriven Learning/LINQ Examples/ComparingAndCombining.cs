@@ -56,6 +56,5 @@ namespace LINQ_Examples
             for (var index = 0; index < expectedUnion.Length; index++)
                 Assert.AreEqual(expectedUnion[index], union[index]);
         }
-
     }
 }
