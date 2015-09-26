@@ -160,7 +160,7 @@ Basics
     }
 ```
 
-Basics
+Comparing and Combining
 ====================
 ```CSharp
         /* Comparing and Combining*/
