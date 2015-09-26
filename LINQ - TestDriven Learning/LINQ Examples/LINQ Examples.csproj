@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Projections.cs" />
     <Compile Include="Creating.cs" />
     <Compile Include="ComparingAndCombining.cs" />
     <Compile Include="Sorting.cs" />

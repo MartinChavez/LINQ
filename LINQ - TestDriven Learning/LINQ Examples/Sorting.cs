@@ -34,7 +34,7 @@ namespace LINQ_Examples
             // Note: It is possible to create several filters by using chaining, as long as the first method is OrderBy followed by the series of ThenBy
 
             Assert.IsTrue(orderedProgrammingLanguages.First().Name == "Java");
-            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "C#");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "F#");
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace LINQ_Examples
             // Functionally identical to OrderByDescending but uses a different syntax
             var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Rating).Reverse().ToList();
 
-            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C#");
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "F#");
             Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Java");
         }
 

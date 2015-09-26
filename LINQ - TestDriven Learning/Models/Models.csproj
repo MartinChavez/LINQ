@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProgrammingLanguageTypeRepository.cs" />
+    <Compile Include="ProgrammingLanguageType.cs" />
     <Compile Include="ProgrammingLanguageRepository.cs" />
     <Compile Include="ProgrammingLanguage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
