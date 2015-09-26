@@ -17,7 +17,7 @@ namespace LINQ_Examples
 
             /* Select */
             // Projects values that are based on a transform function, the transformation is often defined with a Lamda expression
-            //It projects each item in the sequence into the new Type, in this case, it is a String
+            // It projects each item in the sequence into the new Type, in this case, it is a String
             var onlyNames = programmingLanguages.Select(pg => pg.Name).ToList(); 
 
             Assert.AreEqual(onlyNames.First(),"C#");
@@ -65,8 +65,5 @@ namespace LINQ_Examples
             Assert.AreEqual(programmingLanguagesAndTypes.Last().Name, "Ruby");
             Assert.AreEqual(programmingLanguagesAndTypes.First().Type, "Object Oriented");
         }
-
-        /* SelectMany */
-        // Projects multiple sequences based on a transform function and the flattens them into one sequence
     }
 }
