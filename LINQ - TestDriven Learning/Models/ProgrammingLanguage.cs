@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using System.Collections.Generic;
+
+namespace Models
 {
     public class ProgrammingLanguage
     {
@@ -6,5 +8,6 @@
         public string Name { get; set; }
         public int Rating { get; set; }
         public int TypeId { get; set; }
+        public List<ObjectType> ObjectTypes { get; set; }
     }
 }

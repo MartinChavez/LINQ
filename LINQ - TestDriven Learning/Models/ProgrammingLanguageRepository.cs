@@ -11,19 +11,22 @@ namespace Models
                           { Id = 1,
                             Name = "C#",
                             Rating = 10,
-                            TypeId = 1
+                            TypeId = 1,
+                            ObjectTypes = new List<ObjectType> { new ObjectType { Id = 1, Name = "String"} , new ObjectType { Id = 2, Name = "Int" } }
                        },
                     new ProgrammingLanguage()
                           {  Id = 2,
                             Name= "Javascript",
                             Rating = 7,
-                            TypeId = 1
+                            TypeId = 1,
+                              ObjectTypes = new List<ObjectType> { new ObjectType { Id = 1, Name = "Float"} , new ObjectType { Id = 2, Name = "String" } }
                     },
                     new ProgrammingLanguage()
                           { Id = 3,
                             Name= "Java",
                             Rating = 3,
-                            TypeId = 1
+                            TypeId = 1,
+                              ObjectTypes = new List<ObjectType> { new ObjectType { Id = 1, Name = "String"} , new ObjectType { Id = 2, Name = "Int" }, new ObjectType { Id = 2, Name = "Float" } }
                     },
                     new ProgrammingLanguage()
                           {  Id = 4,
@@ -53,7 +56,8 @@ namespace Models
                           {  Id = 8,
                              Name= "Ruby",
                              Rating = 7,
-                             TypeId = 1
+                             TypeId = 1,
+                              ObjectTypes = new List<ObjectType> { new ObjectType { Id = 1, Name = "String"} , new ObjectType { Id = 2, Name = "Int" }, new ObjectType { Id = 2, Name = "Float" } }
                     }     
 
             };

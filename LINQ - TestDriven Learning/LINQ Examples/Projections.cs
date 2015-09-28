@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Models;
 
@@ -64,6 +65,36 @@ namespace LINQ_Examples
             Assert.AreEqual(programmingLanguagesAndTypes.First().Type, "Object Oriented");
             Assert.AreEqual(programmingLanguagesAndTypes.Last().Name, "Ruby");
             Assert.AreEqual(programmingLanguagesAndTypes.First().Type, "Object Oriented");
+        }
+
+        /* Parent/Child Data*/
+        // It refers to the concept in which each parent object has a collection of related or child objects
+        [TestMethod]
+        public void ProjectParentChildDataWithSelect()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages().ToList();
+
+            /* Select */
+            // By defining a search criteria inside a list which is a property of the parent object
+            var programmingLanguegesWithIntTypes = programmingLanguages.Select(pg => pg.ObjectTypes?.Where(ot =>  ot.Name == "Int")).ToList();
+
+            // Note: When working with parent/child relationships, the use of Select is not optimal since the child does not have information about the parent
+            Assert.AreEqual(programmingLanguegesWithIntTypes.First().First().Name, "Int");
+            Assert.AreEqual(programmingLanguegesWithIntTypes.Last().First().Name, "Int");
+        }
+
+        [TestMethod]
+        public void ProjectParentChildDataWithSelectMany()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages().ToList();
+
+            /* SelectMany */
+            // Projects multiple sequences based on a transform function and the flattens them into one sequence
+            var programmingLanguegesWithIntTypes = programmingLanguages.SelectMany(pg => pg.ObjectTypes?.Where(ot => ot.Name == "Int"));
+
+            // Note: When working with parent/child relationships, the use of Select is not optimal since the child does not have information about the parent
+            Assert.AreEqual(programmingLanguegesWithIntTypes.First().Name, "Int");
+            Assert.AreEqual(programmingLanguegesWithIntTypes.Last().Name, "Int");
         }
     }
 }
