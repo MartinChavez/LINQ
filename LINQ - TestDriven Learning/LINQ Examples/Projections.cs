@@ -10,7 +10,7 @@ namespace LINQ_Examples
     {
         /* Projections */
         // Refers to the operation of transforming an object into a new form
-        // The results are projected using the LINQ operators Select or SelectMany
+        // The results are projected using the LINQ operators 'Select' or 'SelectMany'
         [TestMethod]
         public void ProjectwithSelect()
         {
@@ -68,17 +68,17 @@ namespace LINQ_Examples
         }
 
         /* Parent/Child Data*/
-        // It refers to the concept in which each parent object has a collection of related or child objects
+        // A parent object has a collection of related or child objects
         [TestMethod]
         public void ProjectParentChildDataWithSelect()
         {
             var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages().ToList();
 
             /* Select */
-            // By defining a search criteria inside a list which is a property of the parent object
-            var programmingLanguegesWithIntTypes = programmingLanguages.Select(pg => pg.ObjectTypes?.Where(ot =>  ot.Name == "Int")).ToList();
+            // The projection is created when defining a search criteria inside a list, which is a property of the parent object
+            var programmingLanguegesWithIntTypes = programmingLanguages.Select(pg => pg.ObjectTypes?.Where(ot =>  ot.Name == "Int") ?? new List<ObjectType>()).ToList();
 
-            // Note: When working with parent/child relationships, the use of Select is not optimal since the child does not have information about the parent
+            // Note: When working with parent/child relationships, the use of Select is not optimal since the child does not have information about the parent, since it is an IEnumerable<T>
             Assert.AreEqual(programmingLanguegesWithIntTypes.First().First().Name, "Int");
             Assert.AreEqual(programmingLanguegesWithIntTypes.Last().First().Name, "Int");
         }
@@ -89,12 +89,19 @@ namespace LINQ_Examples
             var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages().ToList();
 
             /* SelectMany */
-            // Projects multiple sequences based on a transform function and the flattens them into one sequence
-            var programmingLanguegesWithIntTypes = programmingLanguages.SelectMany(pg => pg.ObjectTypes?.Where(ot => ot.Name == "Int"));
+            // Specialized LINQ operator that allows to easily work with Parent/Child Data
+            // Projects multiple sequences based on a transform function and flattens them into one sequence
+            /*
+            Parameters:
+            - Single parameter: Selector, defines the transform function to apply to each element
+            - Second paramter: Invokes a result selector function on each element therein, it is defined with a Lamda expression, 
+              which has two parameters, the instance of the parent, and the instance of the child, this permits the shaping of data from either sequence
+            */
+            var programmingLanguegesWithIntTypes = programmingLanguages.SelectMany(pg => pg.ObjectTypes?.Where(ot => ot.Name == "Int") ?? new List<ObjectType>(),(pl,ot) => pl).ToList();
 
-            // Note: When working with parent/child relationships, the use of Select is not optimal since the child does not have information about the parent
-            Assert.AreEqual(programmingLanguegesWithIntTypes.First().Name, "Int");
-            Assert.AreEqual(programmingLanguegesWithIntTypes.Last().Name, "Int");
+            /* Find the programming languages with an 'Int' Type */
+            Assert.AreEqual(programmingLanguegesWithIntTypes.First().Name, "C#");
+            Assert.AreEqual(programmingLanguegesWithIntTypes.Last().Name, "Ruby");
         }
     }
 }
