@@ -48,9 +48,6 @@ namespace LINQ_Examples
 
             Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C#");
             Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Java");
-
-            /* Reverse */
-            // Functionally identical to OrderByDescending but uses a different syntax
         }
 
         [TestMethod]
