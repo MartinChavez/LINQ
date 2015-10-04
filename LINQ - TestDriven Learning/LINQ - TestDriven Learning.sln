@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ Examples", "LINQ Examples\LINQ Examples.csproj", "{28A34154-4995-42B8-91F1-5F0F3A357AF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzing Data", "Analyzing Data\Analyzing Data.csproj", "{56A90FD4-1B99-4B8D-B98B-E1764E48F0D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{28A34154-4995-42B8-91F1-5F0F3A357AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A34154-4995-42B8-91F1-5F0F3A357AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28A34154-4995-42B8-91F1-5F0F3A357AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A90FD4-1B99-4B8D-B98B-E1764E48F0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A90FD4-1B99-4B8D-B98B-E1764E48F0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A90FD4-1B99-4B8D-B98B-E1764E48F0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A90FD4-1B99-4B8D-B98B-E1764E48F0D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

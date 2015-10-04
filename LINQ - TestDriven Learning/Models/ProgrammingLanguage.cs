@@ -8,6 +8,8 @@ namespace Models
         public string Name { get; set; }
         public int Rating { get; set; }
         public int TypeId { get; set; }
+        public bool DerivedFromC { get; set; }
         public List<ObjectType> ObjectTypes { get; set; }
+        public decimal MarketShare { get; set; }
     }
 }
