@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="GroupingAndSumming.cs" />
+    <Compile Include="MeanMedianAndMode.cs" />
     <Compile Include="Totaling.cs" />
     <Compile Include="Overview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
