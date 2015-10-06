@@ -31,7 +31,7 @@ Suggested prerequisites
 ====================
 <a name="README">[<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/csharp7.png" width="50px" height="50px" />](https://github.com/MartinChavez/CSharp)</a>
 
-#Basics
+#Overview
 ```C#
 [TestClass]
     public class Overview
@@ -196,6 +196,39 @@ Suggested prerequisites
             // Chaining: Extension methods can be chained together
             // Skip() - allows to fluently(via chaining) skip one entry
             Assert.AreEqual(foundLanguages.Skip(1).First().Name, "Java");
+        }
+```
+
+#Sorting
+```C#
+/* Sorting */
+        // LINQ Provides a set of ordering operators that allow you to order a sequence of objects by one or more criteria
+        // The execution of a query expression using these operators is deferred until the code request an item from the resulting sequence
+        [TestMethod]
+        public void OrderingByKeySelector()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+
+            /* OrderBy */
+            // The parameter for OrderBy is a KeySelector, which is the field to use as the key for the sorting
+            var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Name);
+
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "C");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "Ruby");
+        }
+
+        [TestMethod]
+        public void OrderingUsingTwoConditions()
+        {
+            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
+            /* ThenBy */
+            // Allows a secondary sort apart from OrderBy
+            // The parameter for ThenBy is a KeySelector
+            var orderedProgrammingLanguages = programmingLanguages.OrderBy(programmingLanguage => programmingLanguage.Rating).ThenBy(programmingLanguage => programmingLanguage.Name);
+            // Note: It is possible to create several filters by using chaining, as long as the first method is 'OrderBy' followed by a series of 'ThenBy'
+
+            Assert.IsTrue(orderedProgrammingLanguages.First().Name == "Java");
+            Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "F#");
         }
 ```
 
