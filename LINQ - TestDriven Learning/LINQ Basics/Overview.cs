@@ -12,7 +12,7 @@ namespace LINQ_Basics
         {
             /* Language Integrated Query (LINQ)
             - Extends powerful query capabilities to the language syntax of C#. 
-            - LINQ introduces standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
+            - LINQ introduces a standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
             */
             /*
             LINQ can be used when working with:
@@ -100,7 +100,7 @@ namespace LINQ_Basics
             var csharp = query.First();
 
             /*Note: 
-            - LINQ uses defered execution, this means that the 'query' statement only defines the LINQ statement
+            - LINQ uses deferred execution, this means that the 'query' statement only defines the LINQ statement
             - The LINQ query is not executed until its result is required
             - Calling an operator on the query will cause the query to execute, in this case, is the First() method
             */
@@ -122,7 +122,7 @@ namespace LINQ_Basics
             */
             /* The First() method has two overloads:
             - The first overload method passes no parameters and returns the first element of a sequence
-            - The second overload allows defining the criteria, it returns the first element in a sequence that satisfies a specific condition
+            - The second overload allows defining criteria, it returns the first element in a sequence that satisfies a specific condition
                 - First(Func<ProgrammingLanguage,bool> predicate) overload defines a delegate (reference to a function)
             */
 
@@ -140,7 +140,7 @@ namespace LINQ_Basics
         }
 
         [TestMethod]
-        public void FailToFindItemWithLinqMethodSyntax()
+        public void FailToFindItemWithFirstOrDefault()
         {
             var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
             /* FirstOrDefault */
@@ -156,7 +156,7 @@ namespace LINQ_Basics
             var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
             /* Where */
             // Where is the extension method that is used to find multiple entries
-            // It also recieves a Lamda expression as a parameter
+            // It also recieves a Lambda expression as a parameter
             var foundLanguages =
                 programmingLanguages.Where(
                     // It is a good practice to cache the query result by simply adding a ToList() or ToArray() after LINQ so that the query result is saved(cached)
