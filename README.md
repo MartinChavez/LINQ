@@ -22,7 +22,6 @@ A project aimed to help the user master LINQ with a test-driven approach. Each u
 
 ## Creating
  - Range()
- - Select()
  - Repeat()
  
 ## Comparing and Combining
@@ -32,6 +31,11 @@ A project aimed to help the user master LINQ with a test-driven approach. Each u
  - Distinct
  - Union
 
+## Projection
+ - Select()
+ - Join()
+ - SelectMany()
+ 
 Tools
 ====================
 <a name="README">[<img src="http://www.codeproject.com/KB/cross-platform/860150/vs2015.png" width="50px" height="50px" />](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx)</a>
