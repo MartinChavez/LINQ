@@ -5,7 +5,6 @@ LINQ: Test-Driven Learning
 
 A project aimed to help the user master LINQ with a test-driven approach. Each unit contains an annotated tutorial on the code and the ability to run Unit Tests to verify the expected behavior.
 
-# Topics
 ## Overview
  - LINQ Query Syntax
  - LINQ Method Syntax
