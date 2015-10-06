@@ -309,6 +309,13 @@ Suggested prerequisites
             for (var index = 0; index < expectedUnion.Length; index++)
                 Assert.AreEqual(expectedUnion[index], union[index]);
 ```
+
+Run and Play
+====================
+Open, edit, run the tests and start learning!
+
+<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/linqTests.png"/>
+
 Questions ?
 ====================
 If you have any questions, please feel free to ask me:
