@@ -13,6 +13,7 @@ Topics
  - Lambda expressions
  - First() and FirstOrDefault()
  - Where()
+ - [create an anchor](#Basics)
 
 Tools
 ====================
@@ -22,7 +23,7 @@ Suggested prerequisites
 ====================
 <a name="README">[<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/csharp7.png" width="50px" height="50px" />](https://github.com/MartinChavez/CSharp)</a>
 
-Basics
+#Basics
 ====================
 ```C#
 [TestClass]
