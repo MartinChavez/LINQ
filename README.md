@@ -316,18 +316,12 @@ Open, edit, run the tests and start learning!
 
 <img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/linqTests.png"/>
 
-Questions ?
-====================
-If you have any questions, please feel free to ask me:
-[Martin Chavez Aguilar](mailto:martin.chavez@live.com)
-
-Contributors
-====================
-* <a href="https://github.com/martinchavez">Martin Chavez</a> 
-* 
 Contact
 ====================
 [<img src="https://s3-us-west-2.amazonaws.com/martinsocial/github.png" />](https://github.com/martinchavez)
+[<img src="https://s3-us-west-2.amazonaws.com/martinsocial/mail.png" />](info@martinchavezaguilar.com)
+[<img src="https://s3-us-west-2.amazonaws.com/martinsocial/linkedin.png" />](https://github.com/martinchavez)
+[<img src="https://s3-us-west-2.amazonaws.com/martinsocial/twitter.png" />](https://twitter.com/martinchavezag)
 
 Continue Learning
 ====================
