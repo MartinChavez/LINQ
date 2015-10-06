@@ -44,10 +44,10 @@ A project aimed to help the user master LINQ with a test-driven approach. Each u
  - GroupBy(Multiple Properties)
  - GroupBy(Parent Property)
 
-## Measures *using Average()
- - Mean
- - Median
- - Mode
+## Measures 
+ - Mean (using Average())
+ - Median (using GroupBy) 
+ - Mode (using GroupBy and OrderByDescending)
 
 Tools
 ====================
