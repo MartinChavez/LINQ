@@ -13,7 +13,9 @@ Topics
  - Lambda expressions
  - First() and FirstOrDefault()
  - Where()
-# Sorting
+ 
+ # Sorting
+
  - OrderBy()
  - ThenBy()
  - OrderByDescending()
