@@ -12,7 +12,7 @@ namespace Analyzing_Data
         public void CalculateTotalUsingSumOperator()
         {
             /* Sum Operator */
-            // Extension method used to calculate the sum
+            // Extension method used to calculate the sum of every item on a list, when defining a property for such calculation
             /* Parameter:
             - Selector: Defines the property that is used for the calculation
             */

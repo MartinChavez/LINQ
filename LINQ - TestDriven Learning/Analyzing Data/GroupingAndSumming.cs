@@ -39,7 +39,7 @@ namespace Analyzing_Data
         {
             // GroupBy (Multiple Properties)
             /* Parameters:
-            - KeySelector: Defines the key to use for the grouping, in this case we create an anonymous Type of two properties
+            - KeySelector: Defines the key to use for the grouping, in this case, we create an anonymous Type of two properties
             - elementSelector: Defines the values to select from the list
             - resultSelector: Defines the shape or form of the results
             */
@@ -82,7 +82,7 @@ namespace Analyzing_Data
 
 
             // Getting the Market share of programming languages, Ordering by programming language Type name
-            var programmingLanguageTypeQuery = programmingLanguagesTypeQuery.GroupBy(
+            var programmingLanguagesMarketShare = programmingLanguagesTypeQuery.GroupBy(
                 pg => pg.ProgrammingLanguageType, pg => pg.ProgrammingLanguageInstance.MarketShare, (groupKey, marketShareTotal) => new
                 {
                     Key = groupKey.Type,
@@ -90,14 +90,14 @@ namespace Analyzing_Data
                 }).ToList();
 
             // Three results (total):
-            Assert.AreEqual(programmingLanguageTypeQuery.First().Key, "Object Oriented");
-            Assert.AreEqual(programmingLanguageTypeQuery.First().MarketShare, 77);
+            Assert.AreEqual(programmingLanguagesMarketShare.First().Key, "Object Oriented");
+            Assert.AreEqual(programmingLanguagesMarketShare.First().MarketShare, 77);
 
-            Assert.AreEqual(programmingLanguageTypeQuery[1].Key, "Imperative");
-            Assert.AreEqual(programmingLanguageTypeQuery[1].MarketShare, 4);
+            Assert.AreEqual(programmingLanguagesMarketShare[1].Key, "Imperative");
+            Assert.AreEqual(programmingLanguagesMarketShare[1].MarketShare, 4);
 
-            Assert.AreEqual(programmingLanguageTypeQuery.Last().Key, "Functional");
-            Assert.AreEqual(programmingLanguageTypeQuery.Last().MarketShare, 19);
+            Assert.AreEqual(programmingLanguagesMarketShare.Last().Key, "Functional");
+            Assert.AreEqual(programmingLanguagesMarketShare.Last().MarketShare, 19);
         }
     }
 }
