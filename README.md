@@ -14,13 +14,16 @@ A project aimed to help the user master LINQ with a test-driven approach. Each u
  - Where()
  
 ## Sorting
-
  - OrderBy()
  - ThenBy()
  - OrderByDescending()
  - Reverse()
  - Sorting with null values
 
+## Creating
+ - Range()
+ - Select()
+ - Repeat()
 
 Tools
 ====================
