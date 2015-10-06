@@ -200,7 +200,7 @@ Suggested prerequisites
 
 #Sorting
 ```C#
-/* Sorting */
+        /* Sorting */
         // LINQ Provides a set of ordering operators that allow you to order a sequence of objects by one or more criteria
         // The execution of a query expression using these operators is deferred until the code request an item from the resulting sequence
         [TestMethod]
