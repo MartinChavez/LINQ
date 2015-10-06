@@ -323,7 +323,11 @@ If you have any questions, please feel free to ask me:
 
 Contributors
 ====================
-* <a href="https://github.com/martinchavez">Martin Chavez</a> - Wrote the project
+* <a href="https://github.com/martinchavez">Martin Chavez</a> 
+* 
+Contact
+====================
+[<img src="https://s3-us-west-2.amazonaws.com/martinsocial/github.png" />](https://github.com/martinchavez)
 
 Continue Learning
 ====================
