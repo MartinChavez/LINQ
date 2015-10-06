@@ -25,7 +25,7 @@ A project aimed to help the user master LINQ with a test-driven approach. Each u
  - Select()
  - Repeat()
  
- ## Comparing and Combining
+## Comparing and Combining
  - Intersect
  - Except
  - Concat
@@ -240,7 +240,7 @@ Suggested prerequisites
             Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "F#");
         }
 ```
-#Overview
+#Comparing and Combining
 ```C#
         /* Comparing and Combining*/
         // With LINQ, it is possible to compare and combine using the Set Operators, which are extension methods of the Enumerable class
