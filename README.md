@@ -13,7 +13,13 @@ Topics
  - Lambda expressions
  - First() and FirstOrDefault()
  - Where()
- - [create an anchor](#basics)
+ # Sorting
+ - OrderBy()
+ - ThenBy()
+ - OrderByDescending()
+ - Reverse()
+ - Sorting with null values
+
 
 Tools
 ====================
