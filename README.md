@@ -59,12 +59,6 @@ Suggested prerequisites
 
 #Overview
 ```C#
-[TestClass]
-    public class Overview
-    {
-        [TestMethod]
-        public void Introduction()
-        {
             /* Language Integrated Query (LINQ)
             - Extends powerful query capabilities to the language syntax of C#. 
             - LINQ introduces a standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
@@ -88,19 +82,6 @@ Suggested prerequisites
             - LINQ to XML
             */
 
-            // LINQ Defines a set of general purpose standard query operators that allow:
-            /*
-            - Transversal
-            - Filter
-            - Projection
-            */
-            // Queries can be applied to any data source that is based on a Type that implements IEnumerable<T>
-
-            //LINQ makes a query a first-class language construct in C# ?
-            const bool answer = true;
-            Assert.IsTrue(answer);
-        }
-
         /* LINQ Syntax
                - There are two ways of writing LINQ Queries:
                - Query Syntax 
@@ -113,25 +94,6 @@ Suggested prerequisites
         /* Method syntax
         - Invokes the LINQ operators using methods
         */
-
-        [TestMethod]
-        public void FindItemWithForeachIterator()
-        {
-            var programmingLanguages = ProgrammingLanguageRepository.GetProgrammingLanguages();
-
-            /* Normal Foreach iteration */
-            ProgrammingLanguage csharp = null;
-            /* Iterating over the loop and finding the programming language 'C#'*/
-            foreach (var programmingLanguage in programmingLanguages)
-            {
-                if (programmingLanguage.Name == "C#")
-                {
-                    csharp = programmingLanguage;
-                }
-            }
-            Assert.IsNotNull(csharp);
-            Assert.IsTrue(csharp.Name == "C#");
-        }
 
         [TestMethod]
         public void FindItemWithLinqQuerySyntax()
