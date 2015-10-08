@@ -254,6 +254,58 @@ Suggested prerequisites
                 Assert.AreEqual(expectedUnion[index], union[index]);
 ```
 
+#Grouping and Summing
+```C#
+       /* GroupBy 
+        - Operator used to group the data and perform analysis
+        - Single Property
+        - Multiple Properties
+        - Parent Property
+       */
+
+        [TestMethod]
+        public void GroupingBySingleProperty()
+        {
+            // GroupBy (Single Property)
+            /* Parameters:
+            - KeySelector: Defines the key to use for the grouping
+            - elementSelector: Defines the values to select from the list
+            - resultSelector: Defines the shape or form of the results
+            */
+
+            // Comparing the Market share of programming languages that 'DerivedFromC' vs the ones that don't
+            var marketShare = ProgrammingLanguageRepository.GetProgrammingLanguages().GroupBy(pg => pg.DerivedFromC, pg => pg.MarketShare, (groupKey, marketShareTotal) => new
+            {
+                Key = groupKey,
+                MarketShare = marketShareTotal.Sum()
+            }).ToList();
+            Assert.AreEqual(marketShare.First().MarketShare, 70);  // Key = true
+            Assert.AreEqual(marketShare.Last().MarketShare, 30);   // Key = false
+        }
+
+        [TestMethod]
+        public void GroupingByMultipleProperties()
+        {
+            // GroupBy (Multiple Properties)
+            /* Parameters:
+            - KeySelector: Defines the key to use for the grouping, in this case, we create an anonymous Type of two properties
+            - elementSelector: Defines the values to select from the list
+            - resultSelector: Defines the shape or form of the results
+            */
+
+            // Comparing the Market share of programming languages that 'DerivedFromC', grouping by the ones that contain 'C'
+            var marketShare = ProgrammingLanguageRepository.GetProgrammingLanguages().GroupBy(
+                pg => new
+                {
+                    pg.DerivedFromC,
+                    NameContainsC = pg.Name.Contains('C')
+
+                }, pg => pg.MarketShare, (groupKey, marketShareTotal) => new
+                {
+                    Key = "Derives From C :" + groupKey.DerivedFromC + " , Name contains 'C' : " + groupKey.NameContainsC,
+                    MarketShare = marketShareTotal.Sum()
+                }).ToList();
+```
 Run and Play
 ====================
 Open, edit, run the tests and start learning!
