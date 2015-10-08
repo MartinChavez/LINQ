@@ -59,22 +59,22 @@ Suggested prerequisites
 
 #Overview
 ```C#
-        /* Language Integrated Query (LINQ)
+           Language Integrated Query (LINQ) 
           - Extends powerful query capabilities to the language syntax of C#. 
           - LINQ introduces a standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
-         */
-        /* LINQ Syntax
+         
+         LINQ Syntax
                - There are two ways of writing LINQ Queries:
                - Query Syntax 
                - Method Syntax
                */
-        /* Query syntax
+          Query syntax
         - Declarative form to invoke the LINQ Operators
         - Similar to a SQL statement
-        */
-        /* Method syntax
+    
+    
         - Invokes the LINQ operators using methods
-        */
+     
 
         [TestMethod]
         public void FindItemWithLinqQuerySyntax()
