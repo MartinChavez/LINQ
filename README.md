@@ -68,7 +68,7 @@ Suggested prerequisites
         - There are two ways of writing LINQ Queries:
         - Query Syntax 
         - Method Syntax
-               */
+        */
         /* Query syntax
         - Declarative form to invoke the LINQ Operators
         - Similar to a SQL statement
