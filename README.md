@@ -59,29 +59,10 @@ Suggested prerequisites
 
 #Overview
 ```C#
-            /* Language Integrated Query (LINQ)
-            - Extends powerful query capabilities to the language syntax of C#. 
-            - LINQ introduces a standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
-            */
-            /*
-            LINQ can be used when working with:
-            - Lists
-            - Binding Data
-            - Generating Summary Data
-            - Working with Strings
-            - Working with Dates
-            - Executing code stored in an object
-            */
-
-            /* Data Sources */
-            // LINQ woks with providers that allow data retrieval
-            /*
-            - LINQ to SQL
-            - LINQ to Entities
-            - LINQ to Objects
-            - LINQ to XML
-            */
-
+        /* Language Integrated Query (LINQ)
+          - Extends powerful query capabilities to the language syntax of C#. 
+          - LINQ introduces a standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
+         */
         /* LINQ Syntax
                - There are two ways of writing LINQ Queries:
                - Query Syntax 
