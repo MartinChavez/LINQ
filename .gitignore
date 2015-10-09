@@ -194,3 +194,7 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+*.iml
+*.name
+.idea/misc.xml
+*.xml
