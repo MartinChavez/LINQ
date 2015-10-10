@@ -1,4 +1,4 @@
-<a name="slides"><img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/linqblack.png" width="200px" height="200px"/>(https://github.com/MartinChavez/CSharp)</a>
+<a name="slides">[<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/linqblack.png" width="200px" height="200px"/>](https://github.com/MartinChavez/CSharp)</a>
 
 LINQ: Test-Driven Learning
 ================
