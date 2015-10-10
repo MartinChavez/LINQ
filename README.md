@@ -60,20 +60,20 @@ Suggested prerequisites
 #Overview
 ```C#
        /* Language Integrated Query (LINQ) 
-        - Extends powerful query capabilities to the language syntax of C#. 
-        - LINQ introduces a standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.
+        - Adds query capabilities to the language syntax of C#. 
+        - LINQ introduces standard, easy to learn patterns for querying and updating data, which can be extended to support potentially any kind of data store.
        */
          
-       /* LINQ Syntax
+       /* LINQ Syntax:
         - There are two ways of writing LINQ Queries:
         - Query Syntax 
         - Method Syntax
         */
-        /* Query syntax
-        - Declarative form to invoke the LINQ Operators
-        - Similar to a SQL statement
+        /* Query syntax:
+        - Uses the declarative form to invoke the LINQ Operators
+        - Similar to an SQL statement
         */
-        /* Method syntax
+        /* Method syntax:
         - Invokes the LINQ operators using methods
         */
 
@@ -84,7 +84,7 @@ Suggested prerequisites
 
             /* Query Expression */
             // A query expression operates on one or more data sources by applying one or more query operators
-            // The syntax contains SQL-like operators: from, where and select
+            // The syntax contains SQL-like operators: 'from', 'where', and 'select'
 
             // from: defines the source of the data
             // programmingLanguage: references each iterated element
@@ -101,7 +101,7 @@ Suggested prerequisites
             /*Note: 
             - LINQ uses deferred execution, this means that the 'query' statement only defines the LINQ statement
             - The LINQ query is not executed until its result is required
-            - Calling an operator on the query will cause the query to execute, in this case, is the First() method
+            - Calling an operator on the query will cause the query to execute. In this case, it is the First() method.
             */
             Assert.IsNotNull(csharp);
             Assert.IsTrue(csharp.Name == "C#");
@@ -128,10 +128,10 @@ Suggested prerequisites
             /* Lambda expression */
             // It is an in-line(defined in the extension method parameter) anonymous function
 
-            // programmingLanguage: represents the parameter, in other words, represents each programming language as the sequence is iterated
+            // programmingLanguage: represents the parameter. In other words, it represents each programming language as the sequence is iterated
             // => : represents the Lambda operator, it separates the parameters from the expression itself
             // programmingLanguage.Name == "C#": represents the body of the function
-            // when the condition is met, the Lamda fuction returns 'true' and 'First()' returns the object
+            // when the condition is met, the Lambda fuction returns 'true' and 'First()' returns the object
             var csharp = programmingLanguages.First(programmingLanguage => programmingLanguage.Name == "C#");
 
             Assert.IsNotNull(csharp);
@@ -173,7 +173,7 @@ Suggested prerequisites
 ```C#
         /* Sorting */
         // LINQ Provides a set of ordering operators that allow you to order a sequence of objects by one or more criteria
-        // The execution of a query expression using these operators is deferred until the code request an item from the resulting sequence
+        // The execution of a query expression using these operators is deferred until the code requests an item from the resulting sequence
         [TestMethod]
         public void OrderingByKeySelector()
         {
@@ -257,7 +257,7 @@ Suggested prerequisites
 #Grouping and Summing
 ```C#
        /* GroupBy 
-        - Operator used to group the data and perform analysis
+        - Is an operator used to group the data and perform analysis
         - Single Property
         - Multiple Properties
         - Parent Property
@@ -288,7 +288,7 @@ Suggested prerequisites
         {
             // GroupBy (Multiple Properties)
             /* Parameters:
-            - KeySelector: Defines the key to use for the grouping, in this case, we create an anonymous Type of two properties
+            - KeySelector: Defines the key to use for the grouping. In this case, we create an anonymous Type of two properties.
             - elementSelector: Defines the values to select from the list
             - resultSelector: Defines the shape or form of the results
             */
