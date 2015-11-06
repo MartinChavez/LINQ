@@ -97,11 +97,11 @@ namespace LINQ_Examples
             - Second paramter: Invokes a result selector function on each element therein, it is defined with a Lamda expression, 
               which has two parameters, the instance of the parent, and the instance of the child, this permits the shaping of data from either sequence
             */
-            var programmingLanguegesWithIntTypes = programmingLanguages.SelectMany(pg => pg.ObjectTypes?.Where(ot => ot.Name == "Int") ?? new List<ObjectType>(),(pl,ot) => pl).ToList();
+            var programmingLanguagesWithIntTypes = programmingLanguages.SelectMany(pg => pg.ObjectTypes?.Where(ot => ot.Name == "Int") ?? new List<ObjectType>(),(pl,ot) => pl).ToList();
 
             /* Find the programming languages with an 'Int' Type */
-            Assert.AreEqual(programmingLanguegesWithIntTypes.First().Name, "C#");
-            Assert.AreEqual(programmingLanguegesWithIntTypes.Last().Name, "Ruby");
+            Assert.AreEqual(programmingLanguagesWithIntTypes.First().Name, "C#");
+            Assert.AreEqual(programmingLanguagesWithIntTypes.Last().Name, "Ruby");
         }
     }
 }
