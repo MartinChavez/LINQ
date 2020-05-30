@@ -310,7 +310,7 @@ Run and Play
 ====================
 Open, edit, run the tests and start learning!
 
-<img src="https://s3-us-west-2.amazonaws.com/testdrivenlearningbucket/linqTests.png"/>
+<img src="linqtests.png"/>
 
 ## Author
 
