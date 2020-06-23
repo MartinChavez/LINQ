@@ -57,7 +57,7 @@ Suggested prerequisites
 ====================
 <a name="README">[<img src="https://martinchavez.github.io/Assets/Logos/csharp.svg" width="50px" height="50px" />](https://github.com/MartinChavez/CSharp)</a>
 
-#Overview
+# Overview
 ```C#
        /* Language Integrated Query (LINQ) 
         - Adds query capabilities to the language syntax of C#. 
@@ -169,7 +169,7 @@ Suggested prerequisites
         }
 ```
 
-#Sorting
+# Sorting
 ```C#
         /* Sorting */
         // LINQ Provides a set of ordering operators that allow you to order a sequence of objects by one or more criteria
@@ -201,7 +201,7 @@ Suggested prerequisites
             Assert.IsTrue(orderedProgrammingLanguages.Last().Name == "F#");
         }
 ```
-#Comparing and Combining
+# Comparing and Combining
 ```C#
         /* Comparing and Combining*/
         // With LINQ, it is possible to compare and combine using the Set Operators, which are extension methods of the Enumerable class
@@ -254,7 +254,7 @@ Suggested prerequisites
                 Assert.AreEqual(expectedUnion[index], union[index]);
 ```
 
-#Grouping and Summing
+# Grouping and Summing
 ```C#
        /* GroupBy 
         - Is an operator used to group the data and perform analysis
